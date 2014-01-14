@@ -32,3 +32,7 @@
 [ 2014-01-14T12:07:16+08:00 ] ERR: (ThinkException) 非法操作:favicon
 [ 2014-01-14T12:07:27+08:00 ] ERR: (ThinkException) 非法操作:favicon
 [ 2014-01-14T12:07:27+08:00 ] ERR: (ThinkException) 非法操作:favicon
+<<<<<<< HEAD
+[ 2014-01-14T15:05:15+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
+=======
+>>>>>>> parent of 176cb4d... Revert "第一次提交"

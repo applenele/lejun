@@ -14,7 +14,11 @@
 			$count = count($user_arr);
 			
 			if($count>0){
+<<<<<<< HEAD
+				$_SESSION['username']=$username;
+=======
 				$_SESSION['username']='nele';
+>>>>>>> parent of 176cb4d... Revert "第一次提交"
 				$this->success('登录成功');
                 
 			}
