@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 return array(
 	//'配置项'=>'配置值'
 
@@ -9,11 +9,7 @@ return array(
         'DB_HOST'   => 'localhost', // 服务器地址
         'DB_NAME'   => 'lejun', // 数据库名
         'DB_USER'   => 'root', // 用户名
-<<<<<<< HEAD
-        'DB_PWD'    => 'root', // 密码
-=======
         'DB_PWD'    => 'apple19920716', // 密码
->>>>>>> parent of 176cb4d... Revert "第一次提交"
         'DB_PORT'   => 3306, // 端口
         'DB_PREFIX' => '', // 数据库表前缀 
         

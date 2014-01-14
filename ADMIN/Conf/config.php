@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿<?php
 return array(
 	//'配置项'=>'配置值'
@@ -24,10 +23,5 @@ return array(
         ),
 
       '__ROOT__'=>"/thinkphpdemo03",
-=======
-<?php
-return array(
-	//'配置项'=>'配置值'
->>>>>>> parent of 176cb4d... Revert "第一次提交"
 );
 ?>
