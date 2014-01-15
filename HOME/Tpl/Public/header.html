@@ -16,7 +16,7 @@
     
     <script type="text/javascript" src="__JS__/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="__JS__/bootstrap.js"></script>
-    <script type="text/javascript" src="__JS__/index.js"></script>
+    <script type="text/javascript" src="__JS__/index.js" charset="utf-8"></script>
   
    <!--[if lt IE 9]>
     <script src="dist/html5shiv.js"></script>
@@ -35,7 +35,7 @@
             <span class="icon-bar"></span>
         </a>
         
-          <a id="lejun" href="#" class="brand" rel ="popover"  title ="欢迎来到乐军论坛"  data-toggle="popover" onclick="popover()"  data-html="true"  data-content ="你的支持是我我们前进的动力">lejun</a>  
+          <a id="lejun" href="__APP__" class="brand" rel ="popover"  title ="欢迎来到乐军论坛"  data-toggle="popover" onclick="popover()"  data-html="true"  data-content ="你的支持是我我们前进的动力">lejun</a>  
           <script>
            
 	       function popover(){$('#lejun').popover();}
@@ -140,7 +140,7 @@
              </li>
              <li class="divider-vertical"><a href="#"></a></li>
           	 <li>
-                 <a href="__APP__/Login/do_logout" data-toggle="modal">退出</a>
+                 <a href="#confire-logout-win" data-toggle="modal">退出</a>
             </li>
             <?php 
               }
@@ -154,7 +154,7 @@
       </div>
   </div>
   
-   <!--跳出登陆的对话框-->
+    <!--跳出登陆的对话框-->
     <div class="modal hide fade" id="login-win">
               <div class="modal-header">
                  <a class="close" data-dismiss="modal">×</a>
@@ -163,12 +163,12 @@
               </div>
               <div class="modal-body">
                     <div class="modal-form">
-                       <form action="__APP__/Login/do_login" method="post"  class="form-horizontal">
+                       <form action="__APP__/Login/do_login" method="post"  class="form-horizontal" name="user_login">
                         <div class="control-group">
                            <label for="username" class="control-label">用户名</label>
                            <div class="controls">
                             <input type="text" name="username" id="username" placeholder="用户名"  />
-                            <p class="help-block" id="username-warning">请输入用户名</p>
+                            <p class="help-inline" id="username-warning" style="color:#F00;"></p>
                             </div>
                         </div>
                           
@@ -176,15 +176,41 @@
                           <label for="pwd" class="control-label">密码</label>
                          <div class="controls">
                           <input type="password" name="pwd" id="pwd" placeholder="密码" />
-                          <p class="help-block" id="pwd-warning">请输入密码</p>
+                          <p class="help-inline" id="pwd-warning" style="color:#F00;"></p>
                          </div>
-                        </div>      
+                        </div>
+                        
+                        <div class="control-group">
+                          <label for="code" class="control-label">验证码</label>
+                         <div class="controls">
+                          <input style="width:100px;" type="text" name="code" id="code" placeholder="验证码" /><img src="__APP__/Public/code" alt="" onclick='this.src=this.src+"?"+Math.random()'><span>(点击验证码刷新)</span>
+                         <p class="help-inline" id="code-warning" style="color:#F00;"></p>
+                         </div>
+                        </div>   
+                        
+                        <div class="control-group" style="margin-left:100px;">
+                           <p id="login_warning" style="color:#F00;"></p>
+                        </div>
+                           
                     </div>     
               </div>
               <div class="modal-footer">
                     <button type="button"  class="btn btn-primary" id="login-win-close-btn">取消</button>
                     <a href="__APP__/Register/register" class="btn btn-primary" id="to-register-win-close-btn">注册</a>
-                    <button type="submit" class="btn btn-primary">确定登陆</button>
+                    <button type="button" class="btn btn-primary" id="login-sub-btn">确定登陆</button>
               </div>
               </form>  
+    </div>
+    
+    <!--确定注销窗口-->
+      <div class="modal hide fade" id="confire-logout-win">
+              <div class="modal-header">
+                 <a class="close" data-dismiss="modal">×</a>
+                       <h2>确定注销</h2> 
+              </div>
+              
+              <div class="modal-body">
+                 <a href="__APP__/Login/do_logout" class="btn btn-primary">确定退出</a>
+                  <button id="logout-cancel-btn" class="btn btn-primary">取消</button>
+              </div>
     </div>

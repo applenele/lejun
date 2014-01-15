@@ -3,6 +3,9 @@
 		
 	    /*实现用户登陆*/
 		public function do_login(){
+			if($_SESSION['verify'] != md5($_POST['code'])) {
+                 echo '0';
+              }else{    
 			 $username=$_POST['username'];
              $pwd=$_POST['pwd'];
 			 $user=new Model("User_logn");
@@ -12,21 +15,21 @@
 			
 			$user_arr=$user->where($condition)->select();
 			$count = count($user_arr);
-			
 			if($count>0){
-				$_SESSION['username']='nele';
-				$this->success('登录成功');
-                
+				$_SESSION['username']=$username;
+				echo '2';
 			}
 			else{
-				$this->error('用户或密码错误，请重新登录');
+				echo '1';
 				}
+           }			
 		}
 		
 		/*注销用户操作*/
 		public function  do_logout(){
 			unset($_SESSION['username']);
-			$this->success('注销成功');
+		    $this->success("注销成功");
+		    $this->redirect("Index/index");  
 			}
 		
 		

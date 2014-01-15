@@ -1,0 +1,7 @@
+[ 2014-01-15T11:49:19+08:00 ] 127.0.0.1 /lejun/index.php/Login/do_login
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001428s ]
+SQL: SHOW COLUMNS FROM `user_logn` [ RunTime:0.004097s ]
+SQL: SELECT * FROM `user_logn` WHERE ( `username` = 'test' ) AND ( `password` = '123456' )  [ RunTime:0.000371s ]
+
