@@ -17,12 +17,7 @@
 			$count = count($user_arr);
 			if($count>0){
 				$_SESSION['username']=$username;
-<<<<<<< HEAD
-				echo '2';
-=======
-				$this->success('登录成功');
-                
->>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
+				echo '2';     
 			}
 			else{
 				echo '1';

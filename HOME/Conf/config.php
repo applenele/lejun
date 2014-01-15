@@ -3,6 +3,9 @@ return array(
 	//'配置项'=>'配置值'
 
 	    'SHOW_PAGE_TRACE'=>true,//开启页面trace
+		
+		
+		'OUTPUT_ENCODE'=>false,
 
 		//数据库配置信息
         'DB_TYPE'   => 'mysql', // 数据库类型
@@ -21,6 +24,8 @@ return array(
 			 '__IMG__'=>'/lejun/Public/img',
 			
         ),
+		
+		
 
       '__ROOT__'=>"/thinkphpdemo03",
 );
