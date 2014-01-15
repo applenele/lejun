@@ -6,7 +6,11 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
+<<<<<<< HEAD
 // | Author: luofei614 <www.3g4k.com>
+=======
+// | Author: luofei614 <weibo.com/luofei614>
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
 // +----------------------------------------------------------------------
 // $Id$
 
@@ -18,7 +22,11 @@
  * 定义项目的tags.php文件， 
  * <code>
  * <?php return array(
+<<<<<<< HEAD
  *   'view_end'=>array(
+=======
+ *   'app_end'=>array(
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
  *       'FireShowPageTrace'
  *   )
  * );
@@ -2090,4 +2098,8 @@ class FirePHP {
     {
         trigger_error("The FirePHP::setRendererUrl() method is no longer supported", E_USER_DEPRECATED);
     }  
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691

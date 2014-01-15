@@ -33,6 +33,10 @@ class UploadFile {//类定义开始
         'thumbFile'         =>  '',// 缩略图文件名
         'thumbExt'          =>  '',// 缩略图扩展名        
         'thumbRemoveOrigin' =>  false,// 是否移除原图
+<<<<<<< HEAD
+=======
+        'thumbType'         =>  1, // 缩略图生成方式 1 按设置大小截取 0 按原图等比例缩略
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         'zipImages'         =>  false,// 压缩图片文件上传
         'autoSub'           =>  false,// 启用子目录保存文件
         'subType'           =>  'hash',// 子目录创建方式 可以使用hash date custom
@@ -126,7 +130,16 @@ class UploadFile {//类定义开始
                         $suffix     =   isset($thumbSuffix[$i])?$thumbSuffix[$i]:$thumbSuffix[0];
                         $thumbname  =   $prefix.basename($filename,'.'.$file['extension']).$suffix;
                     }
+<<<<<<< HEAD
                     Image::thumb($filename,$thumbPath.$thumbname.'.'.$thumbExt,'',$thumbWidth[$i],$thumbHeight[$i],true);                    
+=======
+                    if(1 == $this->thumbType){
+                        Image::thumb2($filename,$thumbPath.$thumbname.'.'.$thumbExt,'',$thumbWidth[$i],$thumbHeight[$i],true);
+                    }else{
+                        Image::thumb($filename,$thumbPath.$thumbname.'.'.$thumbExt,'',$thumbWidth[$i],$thumbHeight[$i],true);                        
+                    }
+                    
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
                 }
                 if($this->thumbRemoveOrigin) {
                     // 生成缩略图之后删除原图
@@ -520,4 +533,8 @@ class UploadFile {//类定义开始
     public function getErrorMsg() {
         return $this->error;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691

@@ -88,7 +88,11 @@ class Rsa {
 
                 $idx++;
             }
+<<<<<<< HEAD
             array_pus($partial_results, $part_res);
+=======
+            array_push($partial_results, $part_res);
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         }
         // Calculate final result
         $result = "1";

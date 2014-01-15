@@ -75,7 +75,10 @@ class CacheSqlite extends Cache {
      */
     public function set($name, $value,$expire=null) {
         N('cache_write',1);
+<<<<<<< HEAD
         $expire =  !empty($expireTime)? $expireTime : C('DATA_CACHE_TIME');
+=======
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         $name  = $this->options['prefix'].sqlite_escape_string($name);
         $value = sqlite_escape_string(serialize($value));
         if(is_null($expire)) {

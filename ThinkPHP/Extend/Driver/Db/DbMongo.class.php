@@ -32,8 +32,13 @@ class DbMongo extends Db{
      * @param array $config 数据库配置数组
      */
     public function __construct($config=''){
+<<<<<<< HEAD
         if ( !class_exists('mongo') ) {
             throw_exception(L('_NOT_SUPPERT_').':mongo');
+=======
+        if ( !class_exists('mongoClient') ) {
+            throw_exception(L('_NOT_SUPPERT_').':mongoClient');
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         }
         if(!empty($config)) {
             $this->config   =   $config;
@@ -52,7 +57,11 @@ class DbMongo extends Db{
             if(empty($config))  $config =   $this->config;
             $host = 'mongodb://'.($config['username']?"{$config['username']}":'').($config['password']?":{$config['password']}@":'').$config['hostname'].($config['hostport']?":{$config['hostport']}":'').'/'.($config['database']?"{$config['database']}":'');
             try{
+<<<<<<< HEAD
                 $this->linkID[$linkNum] = new mongo( $host,$config['params']);
+=======
+                $this->linkID[$linkNum] = new mongoClient( $host,$config['params']);
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
             }catch (MongoConnectionException $e){
                 throw_exception($e->getmessage());
             }
@@ -193,7 +202,11 @@ class DbMongo extends Db{
         try{
             // 记录开始执行时间
             G('queryStartTime');
+<<<<<<< HEAD
             $result =  $replace?   $this->_collection->save($data,true):  $this->_collection->insert($data,true);
+=======
+            $result =  $replace?   $this->_collection->save($data):  $this->_collection->insert($data);
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
             $this->debug();
             if($result) {
                $_id    = $data['_id'];
@@ -278,7 +291,16 @@ class DbMongo extends Db{
         try{
             // 记录开始执行时间
             G('queryStartTime');
+<<<<<<< HEAD
             $result   = $this->_collection->update($query,$set,array("multiple" => true));
+=======
+            if(isset($options['limit']) && $options['limit'] == 1) {
+                $multiple   =   array("multiple" => false);
+            }else{
+                $multiple   =   array("multiple" => true);
+            }
+            $result   = $this->_collection->update($query,$set,$multiple);
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
             $this->debug();
             return $result;
         } catch (MongoCursorException $e) {

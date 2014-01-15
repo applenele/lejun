@@ -8,6 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
+<<<<<<< HEAD
 // $Id: Date.class.php 2662 2012-01-26 06:32:50Z liu21st $
 
 
@@ -15,162 +16,261 @@
  +------------------------------------------------------------------------------
  * 日期时间操作类
  +------------------------------------------------------------------------------
+=======
+
+
+/**
+ * 日期时间操作类
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
  * @category   ORG
  * @package  ORG
  * @subpackage  Date
  * @author    liu21st <liu21st@gmail.com>
  * @version   $Id: Date.class.php 2662 2012-01-26 06:32:50Z liu21st $
+<<<<<<< HEAD
  +------------------------------------------------------------------------------
+=======
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
  */
 class Date {
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 日期的时间戳
      +----------------------------------------------------------
      * @var integer
      * @access protected
      +----------------------------------------------------------
+=======
+     * 日期的时间戳
+     * @var integer
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $date;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 时区
      +----------------------------------------------------------
      * @var integer
      * @access protected
      +----------------------------------------------------------
+=======
+     * 时区
+     * @var integer
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $timezone;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 年
      +----------------------------------------------------------
      * @var integer
      * @access protected
      +----------------------------------------------------------
+=======
+     * 年
+     * @var integer
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $year;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 月
      +----------------------------------------------------------
      * @var integer
      * @access protected
      +----------------------------------------------------------
+=======
+     * 月
+     * @var integer
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $month;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 日
      +----------------------------------------------------------
      * @var integer
      * @access protected
      +----------------------------------------------------------
+=======
+     * 日
+     * @var integer
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $day;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 时
      +----------------------------------------------------------
      * @var integer
      * @access protected
      +----------------------------------------------------------
+=======
+     * 时
+     * @var integer
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $hour;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 分
      +----------------------------------------------------------
      * @var integer
      * @access protected
      +----------------------------------------------------------
+=======
+     * 分
+     * @var integer
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $minute;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 秒
      +----------------------------------------------------------
      * @var integer
      * @access protected
      +----------------------------------------------------------
+=======
+     * 秒
+     * @var integer
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $second;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 星期的数字表示
      +----------------------------------------------------------
      * @var integer
      * @access protected
      +----------------------------------------------------------
+=======
+     * 星期的数字表示
+     * @var integer
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $weekday;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 星期的完整表示
      +----------------------------------------------------------
      * @var string
      * @access protected
      +----------------------------------------------------------
+=======
+     * 星期的完整表示
+     * @var string
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $cWeekday;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 一年中的天数 0－365
      +----------------------------------------------------------
      * @var integer
      * @access protected
      +----------------------------------------------------------
+=======
+     * 一年中的天数 0－365
+     * @var integer
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $yDay;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 月份的完整表示
      +----------------------------------------------------------
      * @var string
      * @access protected
      +----------------------------------------------------------
+=======
+     * 月份的完整表示
+     * @var string
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $cMonth;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 日期CDATE表示
      +----------------------------------------------------------
      * @var string
      * @access protected
      +----------------------------------------------------------
+=======
+     * 日期CDATE表示
+     * @var string
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $CDATE;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 日期的YMD表示
      +----------------------------------------------------------
      * @var string
      * @access protected
      +----------------------------------------------------------
+=======
+     * 日期的YMD表示
+     * @var string
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $YMD;
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 时间的输出表示
      +----------------------------------------------------------
      * @var string
      * @access protected
      +----------------------------------------------------------
+=======
+     * 时间的输出表示
+     * @var string
+     * @access protected
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
      protected $CTIME;
 
@@ -178,6 +278,7 @@ class Date {
      protected $Week = array("日","一","二","三","四","五","六");
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 架构函数
      * 创建一个Date对象
@@ -187,6 +288,13 @@ class Date {
      * @static
      * @access public
      +----------------------------------------------------------
+=======
+     * 架构函数
+     * 创建一个Date对象
+     * @param mixed $date  日期
+     * @static
+     * @access public
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function __construct($date='') {
         //分析日期
@@ -195,6 +303,7 @@ class Date {
     }
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 日期分析
      * 返回时间戳
@@ -206,6 +315,14 @@ class Date {
      +----------------------------------------------------------
      * @return string
      +----------------------------------------------------------
+=======
+     * 日期分析
+     * 返回时间戳
+     * @static
+     * @access public
+     * @param mixed $date 日期
+     * @return string
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function parse($date) {
         if (is_string($date)) {
@@ -225,7 +342,11 @@ class Date {
             $tmpdate = $date;
 
         } else {
+<<<<<<< HEAD
             if (get_class($date) == "date") {
+=======
+            if (get_class($date) == "Date") {
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
                 //如果是Date对象
                 $tmpdate = $date->date;
             } else {
@@ -237,6 +358,7 @@ class Date {
     }
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 验证日期数据是否有效
      +----------------------------------------------------------
@@ -246,11 +368,18 @@ class Date {
      +----------------------------------------------------------
      * @return string
      +----------------------------------------------------------
+=======
+     * 验证日期数据是否有效
+     * @access public
+     * @param mixed $date 日期数据
+     * @return string
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function valid($date) {
 
     }
 
+<<<<<<< HEAD
 
     /**
      +----------------------------------------------------------
@@ -263,6 +392,14 @@ class Date {
      +----------------------------------------------------------
      * @return void
      +----------------------------------------------------------
+=======
+    /**
+     * 日期参数设置
+     * @static
+     * @access public
+     * @param integer $date  日期时间戳
+     * @return void
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function setDate($date) {
         $dateArray  =   getdate($date);
@@ -287,6 +424,7 @@ class Date {
     }
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 日期格式化
      * 默认返回 1970-01-01 11:30:45 格式
@@ -297,12 +435,20 @@ class Date {
      +----------------------------------------------------------
      * @return string
      +----------------------------------------------------------
+=======
+     * 日期格式化
+     * 默认返回 1970-01-01 11:30:45 格式
+     * @access public
+     * @param string $format  格式化参数
+     * @return string
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function format($format = "%Y-%m-%d %H:%M:%S") {
         return strftime($format, $this->date);
     }
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 是否为闰年
      +----------------------------------------------------------
@@ -311,6 +457,12 @@ class Date {
      +----------------------------------------------------------
      * @return string
      +----------------------------------------------------------
+=======
+     * 是否为闰年
+     * @static
+     * @access public
+     * @return string
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function isLeapYear($year='') {
         if(empty($year)) {
@@ -320,7 +472,10 @@ class Date {
     }
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
+=======
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      * 计算日期差
      *
      *  w - weeks
@@ -328,6 +483,7 @@ class Date {
      *  h - hours
      *  m - minutes
      *  s - seconds
+<<<<<<< HEAD
      +----------------------------------------------------------
      * @static
      * @access public
@@ -337,6 +493,13 @@ class Date {
      +----------------------------------------------------------
      * @return integer
      +----------------------------------------------------------
+=======
+     * @static
+     * @access public
+     * @param mixed $date 要比较的日期
+     * @param string $elaps  比较跨度
+     * @return integer
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function dateDiff($date, $elaps = "d") {
         $__DAYS_PER_WEEK__       = (7);
@@ -371,6 +534,7 @@ class Date {
     }
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 人性化的计算日期差
      +----------------------------------------------------------
@@ -382,6 +546,14 @@ class Date {
      +----------------------------------------------------------
      * @return string
      +----------------------------------------------------------
+=======
+     * 人性化的计算日期差
+     * @static
+     * @access public
+     * @param mixed $time 要比较的时间
+     * @param mixed $precision 返回的精度
+     * @return string
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function timeDiff( $time ,$precision=false) {
         if(!is_numeric($precision) && !is_bool($precision)) {
@@ -407,6 +579,7 @@ class Date {
     }
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 计算月份的第一天 返回Date对象
      +----------------------------------------------------------
@@ -478,6 +651,75 @@ class Date {
      +----------------------------------------------------------
      * @return integer
      +----------------------------------------------------------
+=======
+     * 返回周的某一天 返回Date对象
+     * @access public
+     * @return Date
+     */
+    public function getDayOfWeek($n){
+        $week = array(0=>'sunday',1=>'monday',2=>'tuesday',3=>'wednesday',4=>'thursday',5=>'friday',6=>'saturday');
+        return (new Date($week[$n]));
+    }
+
+    /**
+     * 计算周的第一天 返回Date对象
+     * @access public
+     * @return Date
+     */
+    public function firstDayOfWeek() {
+        return $this->getDayOfWeek(1);
+    }
+
+    /**
+     * 计算月份的第一天 返回Date对象
+     * @access public
+     * @return Date
+     */
+    public function firstDayOfMonth() {
+        return (new Date(mktime(0, 0, 0,$this->month,1,$this->year )));
+    }
+
+    /**
+     * 计算年份的第一天 返回Date对象
+     * @access public
+     * @return Date
+     */
+    public function firstDayOfYear() {
+        return (new Date(mktime(0, 0, 0, 1, 1, $this->year)));
+    }
+
+    /**
+     * 计算周的最后一天 返回Date对象
+     * @access public
+     * @return Date
+     */
+    public function lastDayOfWeek() {
+        return $this->getDayOfWeek(0);
+    }
+
+    /**
+     * 计算月份的最后一天 返回Date对象
+     * @access public
+     * @return Date
+     */
+    public function lastDayOfMonth() {
+        return (new Date(mktime(0, 0, 0, $this->month + 1, 0, $this->year )));
+    }
+
+    /**
+     * 计算年份的最后一天 返回Date对象
+     * @access public
+     * @return Date
+     */
+    public function lastDayOfYear() {
+        return (new Date(mktime(0, 0, 0, 1, 0, $this->year + 1)));
+    }
+
+    /**
+     * 计算月份的最大天数
+     * @access public
+     * @return integer
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function maxDayOfMonth() {
         $result = $this->dateDiff(strtotime($this->dateAdd(1,'m')),'d');
@@ -485,7 +727,10 @@ class Date {
     }
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
+=======
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      * 取得指定间隔日期
      *
      *    yyyy - 年
@@ -498,6 +743,7 @@ class Date {
      *    h    - 小时
      *    n    - 分钟
      *    s    - 秒
+<<<<<<< HEAD
      +----------------------------------------------------------
      * @access public
      +----------------------------------------------------------
@@ -506,6 +752,12 @@ class Date {
      +----------------------------------------------------------
      * @return Date
      +----------------------------------------------------------
+=======
+     * @access public
+     * @param integer $number 间隔数目
+     * @param string $interval  比较类型
+     * @return Date
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function dateAdd($number = 0, $interval = "d") {
         $hours =  $this->hour;
@@ -569,6 +821,7 @@ class Date {
     }
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 日期数字转中文
      * 用于日和月、周
@@ -580,6 +833,14 @@ class Date {
      +----------------------------------------------------------
      * @return string
      +----------------------------------------------------------
+=======
+     * 日期数字转中文
+     * 用于日和月、周
+     * @static
+     * @access public
+     * @param integer $number 日期数字
+     * @return string
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function  numberToCh($number) {
         $number = intval($number);
@@ -602,6 +863,7 @@ class Date {
     }
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      * 年份数字转中文
      +----------------------------------------------------------
@@ -613,6 +875,14 @@ class Date {
      +----------------------------------------------------------
      * @return string
      +----------------------------------------------------------
+=======
+     * 年份数字转中文
+     * @static
+     * @access public
+     * @param integer $yearStr 年份数字
+     * @param boolean $flag 是否显示公元
+     * @return string
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function  yearToCh( $yearStr ,$flag=false ) {
         $array = array('零','一','二','三','四','五','六','七','八','九');
@@ -624,6 +894,7 @@ class Date {
     }
 
     /**
+<<<<<<< HEAD
      +----------------------------------------------------------
      *  判断日期 所属 干支 生肖 星座
      *  type 参数：XZ 星座 GZ 干支 SX 生肖
@@ -636,6 +907,15 @@ class Date {
      +----------------------------------------------------------
      * @return string
      +----------------------------------------------------------
+=======
+     *  判断日期 所属 干支 生肖 星座
+     *  type 参数：XZ 星座 GZ 干支 SX 生肖
+     *
+     * @static
+     * @access public
+     * @param string $type  获取信息类型
+     * @return string
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      */
     public function magicInfo($type) {
         $result = '';

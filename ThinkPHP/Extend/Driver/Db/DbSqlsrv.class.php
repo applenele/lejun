@@ -65,18 +65,34 @@ class DbSqlsrv extends Db{
      * 执行查询  返回数据集
      * @access public
      * @param string $str  sql指令
+<<<<<<< HEAD
      * @return mixed
      */
     public function query($str) {
         $this->initConnect(false);
         if ( !$this->_linkID ) return false;
         $this->queryStr = $str;
+=======
+     * @param array $bind 参数绑定
+     * @return mixed
+     */
+    public function query($str,$bind=array()) {
+        $this->initConnect(false);
+        if ( !$this->_linkID ) return false;
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         //释放前次的查询结果
         if ( $this->queryID ) $this->free();
         N('db_query',1);
         // 记录开始执行时间
         G('queryStartTime');
+<<<<<<< HEAD
         $this->queryID = sqlsrv_query($this->_linkID,$str,array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET));
+=======
+        $str    =   str_replace(array_keys($bind),'?',$str);
+        $bind   =   array_values($bind);
+        $this->queryStr = $str;
+        $this->queryID = sqlsrv_query($this->_linkID,$str,$bind, array( "Scrollable" => SQLSRV_CURSOR_KEYSET));
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         $this->debug();
         if ( false === $this->queryID ) {
             $this->error();
@@ -91,18 +107,34 @@ class DbSqlsrv extends Db{
      * 执行语句
      * @access public
      * @param string $str  sql指令
+<<<<<<< HEAD
      * @return integer
      */
     public function execute($str) {
         $this->initConnect(true);
         if ( !$this->_linkID ) return false;
         $this->queryStr = $str;
+=======
+     * @param array $bind 参数绑定
+     * @return integer
+     */
+    public function execute($str,$bind=array()) {
+        $this->initConnect(true);
+        if ( !$this->_linkID ) return false;
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         //释放前次的查询结果
         if ( $this->queryID ) $this->free();
         N('db_write',1);
         // 记录开始执行时间
         G('queryStartTime');
+<<<<<<< HEAD
         $this->queryID=	sqlsrv_query($this->_linkID,$str);
+=======
+        $str    =   str_replace(array_keys($bind),'?',$str);
+        $bind   =   array_values($bind);
+        $this->queryStr = $str;
+        $this->queryID=	sqlsrv_query($this->_linkID,$str,$bind);
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         $this->debug();
         if ( false === $this->queryID ) {
             $this->error();
@@ -198,6 +230,7 @@ class DbSqlsrv extends Db{
      * @return array
      */
     public function getFields($tableName) {
+<<<<<<< HEAD
         $result =   $this->query("SELECT   column_name,   data_type,   column_default,   is_nullable
         FROM    information_schema.tables AS t
         JOIN    information_schema.columns AS c
@@ -206,6 +239,18 @@ class DbSqlsrv extends Db{
         AND t.table_name    = c.table_name
         WHERE   t.table_name = '$tableName'");
         $info   =   array();
+=======
+        $result = $this->query("
+            SELECT column_name,data_type,column_default,is_nullable
+            FROM   information_schema.tables AS t
+            JOIN   information_schema.columns AS c
+            ON     t.table_catalog = c.table_catalog
+            AND    t.table_schema  = c.table_schema
+            AND    t.table_name    = c.table_name
+            WHERE  t.table_name = '{$tableName}'");
+        $pk = $this->query("SELECT * FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE TABLE_NAME='{$tableName}'");
+        $info = array();
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         if($result) {
             foreach ($result as $key => $val) {
                 $info[$val['column_name']] = array(
@@ -213,7 +258,11 @@ class DbSqlsrv extends Db{
                     'type'    => $val['data_type'],
                     'notnull' => (bool) ($val['is_nullable'] === ''), // not null is empty, null is yes
                     'default' => $val['column_default'],
+<<<<<<< HEAD
                     'primary' => false,
+=======
+                    'primary' => $val['column_name'] == $pk[0]['COLUMN_NAME'],
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
                     'autoinc' => false,
                 );
             }
@@ -249,6 +298,23 @@ class DbSqlsrv extends Db{
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * 字段名分析
+     * @access protected
+     * @param string $key
+     * @return string
+     */
+    protected function parseKey(&$key) {
+        $key   =  trim($key);
+        if(!preg_match('/[,\'\"\*\(\)\[.\s]/',$key)) {
+           $key = '['.$key.']';
+        }
+        return $key;   
+    }
+    
+    /**
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      * limit
      * @access public
      * @param mixed $limit
@@ -279,7 +345,11 @@ class DbSqlsrv extends Db{
             .$this->parseWhere(!empty($options['where'])?$options['where']:'')
             .$this->parseLock(isset($options['lock'])?$options['lock']:false)
             .$this->parseComment(!empty($options['comment'])?$options['comment']:'');
+<<<<<<< HEAD
         return $this->execute($sql);
+=======
+        return $this->execute($sql,$this->parseBind(!empty($options['bind'])?$options['bind']:array()));
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
     }
 
     /**
@@ -295,7 +365,11 @@ class DbSqlsrv extends Db{
             .$this->parseWhere(!empty($options['where'])?$options['where']:'')
             .$this->parseLock(isset($options['lock'])?$options['lock']:false)
             .$this->parseComment(!empty($options['comment'])?$options['comment']:'');
+<<<<<<< HEAD
         return $this->execute($sql);
+=======
+        return $this->execute($sql,$this->parseBind(!empty($options['bind'])?$options['bind']:array()));
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
     }
 
     /**
@@ -319,12 +393,20 @@ class DbSqlsrv extends Db{
         $errors = sqlsrv_errors();
         $this->error    =   '';
         foreach( $errors as $error ) {
+<<<<<<< HEAD
             $this->error .= $error['message'];
+=======
+            $this->error .= $error['code'].':'.$error['message'];
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         }
         if('' != $this->queryStr){
             $this->error .= "\n [ SQL语句 ] : ".$this->queryStr;
         }
+<<<<<<< HEAD
         $result? trace($error['message'],'','ERR'):throw_exception($this->error);
+=======
+        $result? trace($this->error,'','ERR'):throw_exception($this->error);
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         return $this->error;
     }
 }

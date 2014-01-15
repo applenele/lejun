@@ -10,18 +10,30 @@
 // +----------------------------------------------------------------------
 
 defined('THINK_PATH') or exit();
+<<<<<<< HEAD
 /**
  * Redis缓存驱动 
  * 要求安装phpredis扩展：https://github.com/owlient/phpredis
+=======
+
+/**
+ * Redis缓存驱动 
+ * 要求安装phpredis扩展：https://github.com/nicolasff/phpredis
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
  * @category   Extend
  * @package  Extend
  * @subpackage  Driver.Cache
  * @author    尘缘 <130775@qq.com>
  */
 class CacheRedis extends Cache {
+<<<<<<< HEAD
 
     /**
      * 架构函数
+=======
+	 /**
+	 * 架构函数
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
      * @param array $options 缓存参数
      * @access public
      */
@@ -56,7 +68,13 @@ class CacheRedis extends Cache {
      */
     public function get($name) {
         N('cache_read',1);
+<<<<<<< HEAD
         return $this->handler->get($this->options['prefix'].$name);
+=======
+        $value = $this->handler->get($this->options['prefix'].$name);
+        $jsonData  = json_decode( $value, true );
+        return ($jsonData === NULL) ? $value : $jsonData;	//检测是否为JSON数据 true 返回JSON解析数组, false返回源数据
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
     }
 
     /**
@@ -73,6 +91,11 @@ class CacheRedis extends Cache {
             $expire  =  $this->options['expire'];
         }
         $name   =   $this->options['prefix'].$name;
+<<<<<<< HEAD
+=======
+        //对数组/对象数据进行缓存处理，保证数据完整性
+        $value  =  (is_object($value) || is_array($value)) ? json_encode($value) : $value;
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         if(is_int($expire)) {
             $result = $this->handler->setex($name, $expire, $value);
         }else{
@@ -103,4 +126,9 @@ class CacheRedis extends Cache {
     public function clear() {
         return $this->handler->flushDB();
     }
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691

@@ -28,6 +28,7 @@ class CacheMemcache extends Cache {
         if ( !extension_loaded('memcache') ) {
             throw_exception(L('_NOT_SUPPERT_').':memcache');
         }
+<<<<<<< HEAD
         if(empty($options)) {
             $options = array (
                 'host'        =>  C('MEMCACHE_HOST') ? C('MEMCACHE_HOST') : '127.0.0.1',
@@ -36,6 +37,16 @@ class CacheMemcache extends Cache {
                 'persistent'  =>  false,
             );
         }
+=======
+
+        $options = array_merge(array (
+            'host'        =>  C('MEMCACHE_HOST') ? C('MEMCACHE_HOST') : '127.0.0.1',
+            'port'        =>  C('MEMCACHE_PORT') ? C('MEMCACHE_PORT') : 11211,
+            'timeout'     =>  C('DATA_CACHE_TIMEOUT') ? C('DATA_CACHE_TIMEOUT') : false,
+            'persistent'  =>  false,
+        ),$options);
+
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         $this->options      =   $options;
         $this->options['expire'] =  isset($options['expire'])?  $options['expire']  :   C('DATA_CACHE_TIME');
         $this->options['prefix'] =  isset($options['prefix'])?  $options['prefix']  :   C('DATA_CACHE_PREFIX');        

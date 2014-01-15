@@ -299,7 +299,11 @@ where a.rdb$constraint_type=\'PRIMARY KEY\' and a.rdb$relation_name=UPPER(\''.$t
      * @return string
      */
     public function error() {
+<<<<<<< HEAD
         $this->error = ibase_errmsg();
+=======
+        $this->error = ibase_errcode().':'.ibase_errmsg();
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
         if('' != $this->queryStr){
             $this->error .= "\n [ SQL语句 ] : ".$this->queryStr;
         }

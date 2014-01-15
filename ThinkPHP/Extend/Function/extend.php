@@ -208,6 +208,10 @@ function h($text, $tags = null) {
 	$text	=	preg_replace('/\r?\n/','',$text);
 	//br
 	$text	=	preg_replace('/<br(\s\/)?'.'>/i','[br]',$text);
+<<<<<<< HEAD
+=======
+	$text	=	preg_replace('/<p(\s\/)?'.'>/i','[br]',$text);
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
 	$text	=	preg_replace('/(\[br\]\s*){10,}/i','[br]',$text);
 	//过滤危险的属性，如：过滤on事件lang js
 	while(preg_match('/(<[^><]+)( lang|on|action|background|codebase|dynsrc|lowsrc)[^><]+/i',$text,$mat)){
@@ -221,7 +225,11 @@ function h($text, $tags = null) {
 	}
 	//允许的HTML标签
 	$text	=	preg_replace('/<('.$tags.')( [^><\[\]]*)>/i','[\1\2]',$text);
+<<<<<<< HEAD
   $text = preg_replace('/<\/('.$tags.')>/Ui','[/\1]',$text);
+=======
+	$text = preg_replace('/<\/('.$tags.')>/Ui','[/\1]',$text);
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
 	//过滤多余html
 	$text	=	preg_replace('/<\/?(html|head|meta|link|base|basefont|body|bgsound|title|style|script|form|iframe|frame|frameset|applet|id|ilayer|layer|name|script|style|xml)[^><]*>/i','',$text);
 	//过滤合法的html标签
@@ -484,4 +492,8 @@ function auto_charset($fContents, $from='gbk', $to='utf-8') {
     else {
         return $fContents;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691

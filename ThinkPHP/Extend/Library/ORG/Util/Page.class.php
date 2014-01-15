@@ -58,6 +58,10 @@ class Page {
             $this->nowPage  =   $this->totalPages;
         }
         $this->firstRow     =   $this->listRows*($this->nowPage-1);
+<<<<<<< HEAD
+=======
+        if(!empty($url))    $this->url  =   $url; 
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
     }
 
     public function setConfig($name,$value) {
@@ -134,13 +138,21 @@ class Page {
             $page       =   ($nowCoolPage-1)*$this->rollPage+$i;
             if($page!=$this->nowPage){
                 if($page<=$this->totalPages){
+<<<<<<< HEAD
                     $linkPage .= "&nbsp;<a href='".str_replace('__PAGE__',$page,$url)."'>&nbsp;".$page."&nbsp;</a>";
+=======
+                    $linkPage .= "<a href='".str_replace('__PAGE__',$page,$url)."'>".$page."</a>";
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
                 }else{
                     break;
                 }
             }else{
                 if($this->totalPages != 1){
+<<<<<<< HEAD
                     $linkPage .= "&nbsp;<span class='current'>".$page."</span>";
+=======
+                    $linkPage .= "<span class='current'>".$page."</span>";
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
                 }
             }
         }
@@ -150,4 +162,8 @@ class Page {
         return $pageStr;
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691

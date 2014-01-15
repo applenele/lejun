@@ -150,6 +150,12 @@ class RelationModel extends Model {
                                 $pk   =  $result[$mappingKey];
                                 $mappingCondition .= " AND {$mappingFk}='{$pk}'";
                                 $relationData   =  $model->where($mappingCondition)->field($mappingFields)->find();
+<<<<<<< HEAD
+=======
+                                if (!empty($val['relation_deep'])){
+                                    $model->getRelation($relationData,$val['relation_deep']);
+                                }                                
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
                                 break;
                             case BELONGS_TO:
                                 if(strtoupper($mappingClass)==strtoupper($this->name)) {
@@ -161,6 +167,12 @@ class RelationModel extends Model {
                                 $fk   =  $result[$mappingFk];
                                 $mappingCondition .= " AND {$model->getPk()}='{$fk}'";
                                 $relationData   =  $model->where($mappingCondition)->field($mappingFields)->find();
+<<<<<<< HEAD
+=======
+                                if (!empty($val['relation_deep'])){
+                                    $model->getRelation($relationData,$val['relation_deep']);
+                                }                                
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
                                 break;
                             case HAS_MANY:
                                 $pk   =  $result[$mappingKey];
@@ -169,6 +181,15 @@ class RelationModel extends Model {
                                 $mappingLimit =  !empty($val['mapping_limit'])?$val['mapping_limit']:'';
                                 // 延时获取关联记录
                                 $relationData   =  $model->where($mappingCondition)->field($mappingFields)->order($mappingOrder)->limit($mappingLimit)->select();
+<<<<<<< HEAD
+=======
+                                if (!empty($val['relation_deep'])){
+                                    foreach($relationData as $key=>$data){                                    
+                                        $model->getRelation($data,$val['relation_deep']);
+                                        $relationData[$key]     =   $data;
+                                    }                                      
+                                }
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
                                 break;
                             case MANY_TO_MANY:
                                 $pk   =  $result[$mappingKey];
@@ -188,6 +209,15 @@ class RelationModel extends Model {
                                     $sql .= ' LIMIT '.$mappingLimit;
                                 }
                                 $relationData   =   $this->query($sql);
+<<<<<<< HEAD
+=======
+                                if (!empty($val['relation_deep'])){
+                                    foreach($relationData as $key=>$data){                                    
+                                        $model->getRelation($data,$val['relation_deep']);
+                                        $relationData[$key]     =   $data;
+                                    }                                      
+                                }                                
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
                                 break;
                         }
                         if(!$return){
@@ -339,6 +369,12 @@ class RelationModel extends Model {
                                     }
                                     break;
                             }
+<<<<<<< HEAD
+=======
+                            if (!empty($val['relation_deep'])){
+                                $model->opRelation($opType,$mappingData,$val['relation_deep']);
+                            }                               
+>>>>>>> 2fe864fe2b13cfa0dbc1a5db8d06005c08b23691
                     }
                 }
             }
